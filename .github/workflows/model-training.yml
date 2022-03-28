@@ -6,10 +6,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: Setup Python and install requirements
+      - name: Setup Python
         uses: actions/setup-python@v3
         with:
           python-version: "3.9" # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Train model
         run: python src/train.py
